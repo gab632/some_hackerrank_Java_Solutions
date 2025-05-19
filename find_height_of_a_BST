@@ -1,0 +1,36 @@
+
+/*
+    class Node 
+    	int data;
+    	Node left;
+    	Node right;
+	*/
+ 
+ /*
+  A Java method to find the height of a binary search tree.
+  It uses recusion technique. 
+  All hackerrank test cases passed.
+  The Node class described above was part of the starter code.
+  The method below has been written by me.
+*/
+	public static int height(Node root) {
+         
+        int leftHeight = 0;
+        int rightHeight = 0;
+        
+        if(root.left == null){
+            leftHeight = 0;
+        } else {
+            leftHeight = 1 + height(root.left);
+        }
+        if(root.right == null){
+            rightHeight = 0;
+        } else {
+            rightHeight = 1 + height(root.right);
+        }
+        
+        if(leftHeight > rightHeight){
+            return leftHeight;
+        }
+        return rightHeight;
+    }
